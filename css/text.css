@@ -1,0 +1,21 @@
+.erro_text {
+	color: red;
+	text-align: center;
+}
+.sair {
+	color: red;
+	position:  relative;
+	text-align:  right;
+}
+.name {
+	font-size: 120%;
+}
+.image_logo {
+	width: 50%;
+	height: 50%;
+	}
+.image_logo_cell {
+	width: 20%;
+	height: 20%;
+
+	}

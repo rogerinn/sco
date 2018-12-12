@@ -1,0 +1,95 @@
+.btn_close1{
+	border-radius: 5px;	
+	color: white;
+	width: 30%;
+	background-color: #b30000;
+	float: left;
+	text-align: center;
+}
+.btn_cad1 {
+	float: right;
+	border-radius:  5px;
+	color: white;
+	width: 30%;
+	height: 20%;	
+	background-color: #1f7a4d;
+}
+    .container1 {
+      display: inline-block;
+      margin-left: 5%;
+    }
+   .container12 {
+      display: inline-block;
+      margin-left: 5%;
+    }
+   .container13{
+      display: inline-block;
+      margin-left: 5%;
+
+    }    
+.border{
+        border-radius: 8px;
+        width: 100%;
+        margin-top: 1%;
+}   
+.border1{
+	border-radius: 8px;
+	width: 30%;
+	display: inline;
+	margin-right: 5%;
+	margin-top: 1%;
+}   
+.border2{
+  border-radius: 8px;
+  width: 100%;
+  margin-right: 1%;
+  margin-top: 2%;
+}    
+.border3{
+        border-radius: 8px;
+        width: 90%;
+        margin-top: 1%;
+}   
+.btn_cad {
+	float: right;
+	border-radius:  5px;
+	color: white;
+	width: 30%;
+	height: 20%;	
+	background-color: #009933;
+}
+.btn_close{
+	border-radius: 5px;	
+	color: white;
+	width: 30%;
+	height: 20%;
+	background-color: #ff4040;
+	float: left;
+	text-align: center;
+}
+    #painel_master {
+    display: none;
+    }
+    #painel_cordenadores {
+    display: none;
+    }
+    #painel_ocorrencias {
+    	display: none;
+    }
+   #painel_solicitantes {
+   	display: block;
+   }
+#error_sexo_nacionalidade {
+color: red;
+}
+input[type='file'] {
+	display: none;
+}
+#file {
+  background-color: #3498db;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 5px;
+  padding: 6px 20px
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang = 'pt-Br'>
+  <head>
+    <title>
+      SCO - Site | SOG-NDC    </title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#b3d4fc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="Sistema Operacional de Gerenciamento Nacional de Defesa Civil" />
+    <meta name="author" content="Márcio Jalber [marciojalber@gmail.com]" />
+    
+    <link href="assets/img/logo.png" rel="shortcut" type='image/png' />
+    <link href="assets/img/logo.png" rel="shortcut icon" type='image/png' />
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+
+    <style type="text/css">
+      #carregando {transition: opacity 650ms;}
+      #carregando.sumir {opacity: 0;}
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="carregando" style="position: fixed; z-index: 100000; top: 0; left: 0; width: 100%; height: 100%; background: #eee; text-align: center;">
+        <img src="assets/img/carregando.gif" style="">
+      </div>
+      <v-app>
+        <v-toolbar
+  :clipped-left="$vuetify.breakpoint.lgAndUp"
+  color="blue darken-3"
+  dark
+  app
+  fixed
+>
+  <v-toolbar-title class="ml-0 mr-4">
+    <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    <span class="hidden-sm-and-down">
+      SOG-NDC | SCO    </span>
+  </v-toolbar-title>
+  <v-spacer></v-spacer>
+  <a style="text-decoration: none" class="pa-2" :href="url_base + '/site/sobre'">
+    <v-icon>notifications</v-icon>
+  </a>
+  <v-menu>
+    <v-tooltip bottom slot="activator">
+      <v-btn flat slot="activator">
+        <v-icon left>account_circle</v-icon>
+        Olá visitante
+      </v-btn>
+      Conta de usuário
+    </v-tooltip>
+    <v-list>
+      <v-subheader>Márcio Jalber</v-subheader>
+      <v-list-tile href="a">
+        <v-list-tile-avatar>
+          <v-icon large>edit</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-title>Editar minha conta</v-list-tile-title>
+      </v-list-tile>
+      <v-divider></v-divider>
+      <v-list-tile href="login.html">
+        <v-list-tile-avatar>
+          <v-icon large color="error">power_off</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-title>Sair</v-list-tile-title>
+      </v-list-tile>
+    </v-list>
+  </v-menu>
+</v-toolbar>
+        <v-navigation-drawer
+  :clipped="$vuetify.breakpoint.lgAndUp"
+  v-model="drawer"
+  fixed
+  app
+>
+  <v-list two-line>
+          <v-list-tile
+        href    = "pessoas.html"
+              >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+                      >people</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Pessoas</v-list-tile-title>
+          <v-list-tile-sub-title>Gestão do cadastro de dessoas</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+          <v-list-tile
+        href    = "ocorrencias.html"
+              >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+                      >assignment</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Ocorrências</v-list-tile-title>
+          <v-list-tile-sub-title>Gestão das ocorrências</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+          <v-list-tile
+        href    = "relatorios.html"
+              >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+                      >pie_chart</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Relatórios</v-list-tile-title>
+          <v-list-tile-sub-title>Emitir relatorios</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+          <v-list-tile
+        href    = "oficios.html"
+              >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+                      >work</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Ofícios</v-list-tile-title>
+          <v-list-tile-sub-title>Envio de ofícios para outros órgãos</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+          <v-list-tile
+        href    = "sco.html"
+        color="orange"      >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+            color="orange"          >report</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>SCO</v-list-tile-title>
+          <v-list-tile-sub-title>Sistema de Comando de Operações</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+          <v-list-tile
+        href    = "interdicoes.html"
+              >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+                      >block</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Interdições</v-list-tile-title>
+          <v-list-tile-sub-title>Interdições</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+          <v-list-tile
+        href    = "equipamentos.html"
+              >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+                      >flash_on</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Equipamentos</v-list-tile-title>
+          <v-list-tile-sub-title>Equipamentos</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+          <v-list-tile
+        href    = "plano-contigencia.html"
+              >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+                      >transfer_within_a_station</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Plano de Contigência</v-list-tile-title>
+          <v-list-tile-sub-title>Plano de Contigência</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+          <v-list-tile
+        href    = "calendario.html"
+              >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+                      >event</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Calendário</v-list-tile-title>
+          <v-list-tile-sub-title>Gestão do calendário de eventos</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+          <v-list-tile
+        href    = "laudos.html"
+              >
+        <v-list-tile-avatar>
+          <v-icon
+            large
+                      >description</v-icon>
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Laudos</v-list-tile-title>
+          <v-list-tile-sub-title>Gestão de Laudos</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+      </v-list>
+</v-navigation-drawer>
+        <v-content>
+          <v-container fluid>
+            
+EM CONSTRUÇÃO            <v-dialog v-model="msg.show" max-width="500">
+  <v-card>
+    <v-card-text>
+      <v-btn icon style="float: right; margin-top: -5px" @click="msg.show = false">
+        <v-icon>close</v-icon>
+      </v-btn>
+      <v-icon
+        size    = "40"
+        style   = "float: left; margin-top: -5px; margin-right: 10px"
+        color   = "info"
+        v-show  = "msg.type == 'info'"
+       >info</v-icon>
+      <v-icon
+        size    = "40"
+        style   = "float: left; margin-top: -5px; margin-right: 10px"
+        color   = "warning"
+        v-show  = "msg.type == 'warning'"
+       >warning</v-icon>
+      <v-icon
+        size    = "40"
+        style   = "float: left; margin-top: -5px; margin-right: 10px"
+        color   = "success"
+        v-show  = "msg.type == 'success'"
+       >check_circle</v-icon>
+      <v-icon
+        size    = "40"
+        style   = "float: left; margin-top: -5px; margin-right: 10px"
+        color   = "error"
+        v-show  = "msg.type == 'error'"
+       >error</v-icon>
+      <div class="headline mb-3" :class="msg.type + '--text'" v-text="msg.title"></div>
+      <div v-html="msg.msg" style="margin-left: 52px" v-if="!Array.isArray( msg.msg )"></div>
+      <div style="margin-left: 52px" v-else>
+        <ul>
+          <li v-for="linha in msg.msg" v-text="linha"></li>
+        </ul>
+      </div>
+    </v-card-text>
+  </v-card>
+</v-dialog>
+          </v-container>
+        </v-content>
+        <v-footer app class='grey lighten-4 grey--text' role='contentinfo'>
+  <v-divider style="border-top: 0"></v-divider>
+  <div class="pa-2">
+    @2018 - Márcio Jalber
+  </div>
+</v-footer>
+      </v-app>
+    </div>
+    <script>
+      window.addEventListener( 'keydown', function( event ) {
+        app.capturarTecla( event );
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script>var data = {"theme_color":"#b3d4fc","app_name":"SOG-NDC","description":"Sistema Operacional de Gerenciamento Nacional de Defesa Civil","author":"M\u00e1rcio Jalber [marciojalber@gmail.com]","since":"01\/08\/2018","keywords":"","menu":[{"href":"pessoas.html","rotulo":"Pessoas","descricao":"Gest\u00e3o do cadastro de dessoas","icone":"people"},{"href":"ocorrencias.html","rotulo":"Ocorr\u00eancias","descricao":"Gest\u00e3o das ocorr\u00eancias","icone":"assignment"},{"href":"relatorios.html","rotulo":"Relat\u00f3rios","descricao":"Emitir relatorios","icone":"pie_chart"},{"href":"oficios.html","rotulo":"Of\u00edcios","descricao":"Envio de of\u00edcios para outros \u00f3rg\u00e3os","icone":"work"},{"href":"sco.html","rotulo":"SCO","descricao":"Sistema de Comando de Opera\u00e7\u00f5es","icone":"report"},{"href":"interdicoes.html","rotulo":"Interdi\u00e7\u00f5es","descricao":"Interdi\u00e7\u00f5es","icone":"block"},{"href":"equipamentos.html","rotulo":"Equipamentos","descricao":"Equipamentos","icone":"flash_on"},{"href":"plano-contigencia.html","rotulo":"Plano de Contig\u00eancia","descricao":"Plano de Contig\u00eancia","icone":"transfer_within_a_station"},{"href":"calendario.html","rotulo":"Calend\u00e1rio","descricao":"Gest\u00e3o do calend\u00e1rio de eventos","icone":"event"},{"href":"laudos.html","rotulo":"Laudos","descricao":"Gest\u00e3o de Laudos","icone":"description"}],"route":"sco","modulo":"Site","titulo":"SCO"}</script>    <script src="assets/js/components.js?v=1533836259"></script>    <script src="assets/js/app-mixin.js?v=1535563515"></script>    <script src="assets/pages/sco/controller.js?v=1535564775"></script>  </body>
+</html>
